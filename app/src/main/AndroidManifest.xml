@@ -16,8 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".lab6"></activity>
-        <activity android:name=".lab7"></activity>
+        <activity android:name=".lab6" />
+        <activity android:name=".lab7" />
+        <activity android:name=".lab8" />
+        <activity android:name=".lab9"></activity>
     </application>
 
 </manifest>

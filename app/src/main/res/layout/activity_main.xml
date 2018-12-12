@@ -23,11 +23,33 @@
         android:id="@+id/btn_lab7"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="375dp"
+        android:layout_marginBottom="25dp"
         android:text="7 Quick sort"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btn_lab8"
         app:layout_constraintEnd_toEndOf="@+id/btn_lab6"
         app:layout_constraintStart_toStartOf="@+id/btn_lab6"
         app:layout_constraintTop_toBottomOf="@+id/btn_lab6" />
+
+    <Button
+        android:id="@+id/btn_lab8"
+        android:layout_width="145dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="299dp"
+        android:text="8 Quick sort"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_lab7" />
+
+    <Button
+        android:id="@+id/btn_lab9"
+        android:layout_width="145dp"
+        android:layout_height="51dp"
+        android:text="9 Quick sort"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
