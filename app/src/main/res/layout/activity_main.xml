@@ -8,48 +8,131 @@
     tools:layout_editor_absoluteY="81dp">
 
     <Button
-        android:id="@+id/btn_lab6"
-        android:layout_width="wrap_content"
+        android:id="@+id/btn_lab10"
+        android:layout_width="142dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:layout_marginBottom="17dp"
-        android:text="6 Piramidal sort"
-        app:layout_constraintBottom_toTopOf="@+id/btn_lab7"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="28dp"
+        android:text="10 dynamic collections"
+        app:layout_constraintBottom_toTopOf="@+id/btn_lab11"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_lab9" />
 
     <Button
         android:id="@+id/btn_lab7"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="25dp"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginEnd="53dp"
+        android:layout_marginRight="53dp"
+        android:layout_marginBottom="23dp"
         android:text="7 Quick sort"
         app:layout_constraintBottom_toTopOf="@+id/btn_lab8"
-        app:layout_constraintEnd_toEndOf="@+id/btn_lab6"
-        app:layout_constraintStart_toStartOf="@+id/btn_lab6"
+        app:layout_constraintEnd_toStartOf="@+id/btn_lab13"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_lab6" />
 
     <Button
-        android:id="@+id/btn_lab8"
-        android:layout_width="145dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="299dp"
-        android:text="8 Quick sort"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/btn_lab12"
+        android:layout_width="156dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginBottom="34dp"
+        android:text="12 interpretor"
+        app:layout_constraintBottom_toTopOf="@+id/btn_lab13"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_lab7" />
+        app:layout_constraintStart_toEndOf="@+id/btn_lab6"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btn_lab9"
         android:layout_width="145dp"
-        android:layout_height="51dp"
-        android:text="9 Quick sort"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="55dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginRight="48dp"
+        android:layout_marginBottom="27dp"
+        android:text="9 Dynamic arrays"
+        app:layout_constraintBottom_toTopOf="@+id/btn_lab10"
+        app:layout_constraintEnd_toStartOf="@+id/btn_lab14"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_lab8" />
+
+    <Button
+        android:id="@+id/btn_lab13"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginBottom="38dp"
+        android:text="13 RSA"
+        app:layout_constraintBottom_toTopOf="@+id/btn_lab14"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toEndOf="@+id/btn_lab8"
+        app:layout_constraintTop_toBottomOf="@+id/btn_lab12" />
+
+    <Button
+        android:id="@+id/btn_lab6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="53dp"
+        android:layout_marginRight="53dp"
+        android:layout_marginBottom="18dp"
+        android:text="6 Piramidal sort"
+        app:layout_constraintBottom_toTopOf="@+id/btn_lab7"
+        app:layout_constraintEnd_toStartOf="@+id/btn_lab12"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_lab11"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginRight="2dp"
+        android:layout_marginBottom="69dp"
+        android:text="11 Radix Sort"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btn_lab10"
+        app:layout_constraintStart_toStartOf="@+id/btn_lab9"
+        app:layout_constraintTop_toBottomOf="@+id/btn_lab10" />
+
+    <Button
+        android:id="@+id/btn_lab14"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginBottom="252dp"
+        android:text="14 Deikstra"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_lab9"
+        app:layout_constraintTop_toBottomOf="@+id/btn_lab13" />
+
+    <Button
+        android:id="@+id/btn_lab8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginEnd="56dp"
+        android:layout_marginRight="56dp"
+        android:layout_marginBottom="33dp"
+        android:text="8 BinarySearch"
+        app:layout_constraintBottom_toTopOf="@+id/btn_lab9"
+        app:layout_constraintEnd_toStartOf="@+id/btn_lab13"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_lab7" />
 
 </android.support.constraint.ConstraintLayout>

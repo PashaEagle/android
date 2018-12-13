@@ -19,7 +19,12 @@
         <activity android:name=".lab6" />
         <activity android:name=".lab7" />
         <activity android:name=".lab8" />
-        <activity android:name=".lab9"></activity>
+        <activity android:name=".lab9" />
+        <activity android:name=".lab10" />
+        <activity android:name=".lab11" />
+        <activity android:name=".lab12" />
+        <activity android:name=".lab13" />
+        <activity android:name=".lab14"></activity>
     </application>
 
 </manifest>
