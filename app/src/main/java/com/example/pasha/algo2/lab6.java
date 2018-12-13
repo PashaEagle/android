@@ -1,8 +1,12 @@
 package com.example.pasha.algo2;
 
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ActionMenuView;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -28,6 +32,9 @@ public class lab6 extends AppCompatActivity {
         textSortedArray = (TextView)findViewById(R.id.sorted);
         amountOfElements = 0;
         tempArray = new int[100];
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#4842f4")));
 
     }
 

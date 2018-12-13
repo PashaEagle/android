@@ -1,6 +1,9 @@
 package com.example.pasha.algo2;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -43,6 +46,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn_lab12.setOnClickListener(this);
         btn_lab13.setOnClickListener(this);
         btn_lab14.setOnClickListener(this);
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#000000")));
     }
 
     @Override
