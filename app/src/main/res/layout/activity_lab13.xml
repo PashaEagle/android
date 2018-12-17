@@ -43,7 +43,7 @@
     <EditText
         android:id="@+id/editTextQ"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="46dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="72dp"
         android:layout_marginRight="72dp"
@@ -58,7 +58,7 @@
     <EditText
         android:id="@+id/editTextN"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="59dp"
         android:layout_marginEnd="72dp"
         android:layout_marginRight="72dp"
         android:layout_marginBottom="82dp"
@@ -120,6 +120,7 @@
 
     <Button
         android:id="@+id/btn_encode"
+        style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="62dp"
@@ -128,6 +129,7 @@
         android:layout_marginRight="62dp"
         android:layout_marginBottom="22dp"
         android:onClick="btnEncodeClick"
+        android:textColor="@color/colorWhiteText"
         android:text="Encode"
         app:layout_constraintBottom_toTopOf="@+id/editTextEncryptedMessage"
         app:layout_constraintEnd_toEndOf="parent"
@@ -136,6 +138,7 @@
 
     <Button
         android:id="@+id/btn_decode"
+        style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="62dp"
@@ -144,6 +147,7 @@
         android:layout_marginRight="62dp"
         android:layout_marginBottom="7dp"
         android:onClick="btnDecodeClick"
+        android:textColor="@color/colorWhiteText"
         android:text="decode"
         app:layout_constraintBottom_toTopOf="@+id/editTextDecryptedMessage"
         app:layout_constraintEnd_toEndOf="parent"

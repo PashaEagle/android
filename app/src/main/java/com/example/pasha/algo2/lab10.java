@@ -1,5 +1,8 @@
 package com.example.pasha.algo2;
 
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.KeyEvent;
@@ -41,7 +44,8 @@ public class lab10 extends AppCompatActivity {
 
         listView.setAdapter(adapter);
 
-
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#4842f4")));
     }
 
     public void btnAddClick(View view){

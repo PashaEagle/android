@@ -9,76 +9,97 @@
 
     <EditText
         android:id="@+id/editText3"
-        android:layout_width="84dp"
-        android:layout_height="53dp"
+        android:layout_width="0dp"
+        android:layout_height="51dp"
         android:layout_marginStart="38dp"
         android:layout_marginLeft="38dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="104dp"
-        android:layout_marginRight="104dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="61dp"
+        android:layout_marginRight="61dp"
+        android:layout_marginBottom="20dp"
         android:ems="10"
         android:inputType="numberSigned"
+        app:layout_constraintBottom_toTopOf="@+id/btn_add"
         app:layout_constraintEnd_toStartOf="@+id/editText4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btn_add"
-        android:layout_width="wrap_content"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="3dp"
-        android:layout_marginLeft="3dp"
-        android:layout_marginBottom="26dp"
+        android:layout_marginStart="38dp"
+        android:layout_marginLeft="38dp"
+        android:layout_marginEnd="58dp"
+        android:layout_marginRight="58dp"
+        android:layout_marginBottom="20dp"
         android:onClick="btnAddClick"
         android:text="Add"
+        android:textColor="@color/colorWhiteText"
         app:layout_constraintBottom_toTopOf="@+id/textArray"
-        app:layout_constraintStart_toStartOf="@+id/textArray" />
+        app:layout_constraintEnd_toStartOf="@+id/btn_find"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText3" />
 
     <Button
         android:id="@+id/btn_find"
-        android:layout_width="wrap_content"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="9dp"
-        android:layout_marginRight="9dp"
-        android:layout_marginBottom="26dp"
+        android:layout_marginEnd="61dp"
+        android:layout_marginRight="61dp"
+        android:layout_marginBottom="457dp"
         android:onClick="btnFindClick"
         android:text="Find"
-        app:layout_constraintBottom_toTopOf="@+id/textArray"
-        app:layout_constraintEnd_toEndOf="@+id/textArray" />
+        android:textColor="@color/colorWhiteText"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_add"
+        app:layout_constraintTop_toBottomOf="@+id/editText4" />
 
     <TextView
         android:id="@+id/textArray"
-        android:layout_width="281dp"
-        android:layout_height="80dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginStart="38dp"
         android:layout_marginLeft="38dp"
-        android:layout_marginTop="171dp"
+        android:layout_marginEnd="38dp"
+        android:layout_marginRight="38dp"
+        android:layout_marginBottom="17dp"
         android:text="TextView"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textSize="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/imgResult"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_add" />
 
     <ImageView
         android:id="@+id/imgResult"
-        android:layout_width="128dp"
-        android:layout_height="124dp"
-        android:layout_marginBottom="88dp"
+        android:layout_width="173dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="99dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.476"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textArray"
         app:srcCompat="@drawable/ans" />
 
     <EditText
         android:id="@+id/editText4"
         android:layout_width="0dp"
-        android:layout_height="51dp"
-        android:layout_marginEnd="76dp"
-        android:layout_marginRight="76dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginRight="60dp"
+        android:layout_marginBottom="20dp"
         android:ems="10"
         android:inputType="numberSigned"
-        app:layout_constraintBottom_toBottomOf="@+id/editText3"
+        app:layout_constraintBottom_toTopOf="@+id/btn_find"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/editText3"
-        app:layout_constraintTop_toTopOf="@+id/editText3" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

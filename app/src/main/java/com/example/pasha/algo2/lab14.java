@@ -1,5 +1,10 @@
 package com.example.pasha.algo2;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -60,6 +65,9 @@ public class lab14 extends AppCompatActivity {
         maxEdges = 0;
 
         textViewGG.setText("");
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#4842f4")));
     }
 
 
@@ -145,22 +153,35 @@ public class lab14 extends AppCompatActivity {
 
     public void btnCalcClick(View view){
         dijkstra(startFrom - 1);
+        String result = "";
         textViewGG.setText("");
         for (int i = 0; i < vNum; ++i){
-            textViewGG.append("Distance from " + startFrom + " to " + (i + 1) + " = " + dist[i] + "\n");
-
+            result += "Distance from " + startFrom + " to " + (i + 1) + " = " + (dist[i] == Integer.MAX_VALUE / 2 ? "∞" : dist[i]) + "\n";
         }
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(lab14.this);
+        builder.setTitle("Найкоротші відстані:")
+                .setMessage(result)
+                .setCancelable(false)
+                .setNegativeButton("Ok",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        });
+        AlertDialog alert = builder.create();
+        alert.show();
     }
 
              /* Алгоритм Дейкстры за O(V^2) */
 
     void dijkstra(int start) {
-         boolean[] used = new boolean [vNum]; // массив пометок
-         dist = new int [vNum]; // массив расстояния. dist[v] = минимальное_расстояние(start, v)
+         boolean[] used = new boolean [vNum];
+         dist = new int [vNum];
 
 
-         fill(dist, INF); // устанаавливаем расстояние до всех вершин INF
-         dist[start] = 0; // для начальной вершины положим 0
+         fill(dist, INF);
+         dist[start] = 0;
 
          for (;;) {
              int v = -1;
@@ -171,7 +192,7 @@ public class lab14 extends AppCompatActivity {
             used[v] = true; // помечаем ее
             for (int nv = 0; nv < vNum; nv++)
                    if (!used[nv] && graph[v][nv] < INF) // для всех непомеченных смежных
-                       dist[nv] = min(dist[nv], dist[v] + graph[v][nv]); // улучшаем оценку расстояния (релаксация)
+                       dist[nv] = min(dist[nv], dist[v] + graph[v][nv]); // улучшаем оценку расстояния
          }
     }
 }
