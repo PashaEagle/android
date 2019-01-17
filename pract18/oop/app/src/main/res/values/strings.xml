@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">oop</string>
+    <string name="item_search">Search</string>
+    <string name="item_show_only_purchased">Show only purchased</string>
+    <string name="item_show_only_saved">Show only saved</string>
+    <string name="item_show_all">Show all orders</string>
+</resources>

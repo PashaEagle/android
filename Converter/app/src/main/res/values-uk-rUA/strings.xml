@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Конвертер валют</string>
+    <string name="tw1">Введіть значення</string>
+    <string name="tw2">Результат</string>
+    <string name="btn">Конвертувати</string>
+    <string name="rb1">Доллар</string>
+    <string name="rb2">Евро</string>
+    <string name="rb3">Рубль</string>
+    <string name="rb4">Злотий</string>
+    <string name="menu_en">English</string>
+    <string name="menu_uk">Ukr</string>
+</resources>
