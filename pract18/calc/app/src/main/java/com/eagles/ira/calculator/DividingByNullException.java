@@ -1,4 +1,4 @@
-package com.kolesn.pasha.calculator;
+package com.eagles.ira.calculator;
 
 import android.content.Context;
 import android.widget.Toast;

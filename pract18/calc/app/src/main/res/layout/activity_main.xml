@@ -20,8 +20,10 @@
         android:layout_weight="1"
         android:gravity="right"
         android:text="0"
-        android:textSize="36sp"
+        android:textAllCaps="false"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
         android:textStyle="bold"
+        app:fontFamily="casual"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -51,31 +53,43 @@
 
             <Button
                 android:id="@+id/btn_1"
+                style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/btn_1" />
+                android:text="@string/btn_1"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textStyle="bold|italic" />
 
             <Button
                 android:id="@+id/btn_2"
+                style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/btn_2" />
+                android:text="@string/btn_2"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textStyle="bold|italic" />
 
             <Button
                 android:id="@+id/btn_3"
+                style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/btn_3" />
+                android:text="@string/btn_3"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textStyle="bold|italic" />
 
             <Button
                 android:id="@+id/btn_plus"
+                style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/btn_plus" />
+                android:text="@string/btn_plus"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textStyle="bold|italic" />
         </LinearLayout>
 
         <LinearLayout
@@ -85,31 +99,43 @@
 
             <Button
                 android:id="@+id/btn_4"
+                style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/btn_4" />
+                android:text="@string/btn_4"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textStyle="bold|italic" />
 
             <Button
                 android:id="@+id/btn_5"
+                style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/btn_5" />
+                android:text="@string/btn_5"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textStyle="bold|italic" />
 
             <Button
                 android:id="@+id/btn_6"
+                style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/btn_6" />
+                android:text="@string/btn_6"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textStyle="bold|italic" />
 
             <Button
                 android:id="@+id/btn_substract"
+                style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/btn_substract" />
+                android:text="@string/btn_substract"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textStyle="bold|italic" />
 
         </LinearLayout>
 
@@ -120,31 +146,45 @@
 
             <Button
                 android:id="@+id/btn_7"
+                style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/btn_7" />
+                android:text="@string/btn_7"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textSize="14sp"
+                android:textStyle="bold|italic" />
 
             <Button
                 android:id="@+id/btn_8"
+                style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/btn_8" />
+                android:text="@string/btn_8"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textSize="14sp"
+                android:textStyle="bold|italic" />
 
             <Button
                 android:id="@+id/btn_9"
+                style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/btn_9" />
+                android:text="@string/btn_9"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textStyle="bold|italic" />
 
             <Button
                 android:id="@+id/btn_multiply"
+                style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/btn_multiply" />
+                android:text="@string/btn_multiply"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textStyle="bold|italic" />
 
         </LinearLayout>
 
@@ -155,31 +195,47 @@
 
             <Button
                 android:id="@+id/btn_dot"
+                style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/btn_dot" />
+                android:text="@string/btn_dot"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textSize="14sp"
+                android:textStyle="bold|italic" />
 
             <Button
                 android:id="@+id/btn_0"
+                style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/btn_0" />
+                android:text="@string/btn_0"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textSize="14sp"
+                android:textStyle="bold|italic" />
 
             <Button
                 android:id="@+id/btn_equal"
+                style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/btn_equal" />
+                android:text="@string/btn_equal"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textSize="14sp"
+                android:textStyle="bold|italic" />
 
             <Button
                 android:id="@+id/btn_divide"
+                style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/btn_divide" />
+                android:text="@string/btn_divide"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textSize="14sp"
+                android:textStyle="bold|italic" />
 
         </LinearLayout>
 
@@ -190,10 +246,14 @@
 
             <Button
                 android:id="@+id/btn_clear"
+                style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/btn_clear" />
+                android:text="@string/btn_clear"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textSize="14sp"
+                android:textStyle="bold|italic" />
         </LinearLayout>
 
     </LinearLayout>
@@ -220,31 +280,47 @@
 
             <Button
                 android:id="@+id/btn_sin"
+                style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/btn_sin" />
+                android:text="@string/btn_sin"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textSize="14sp"
+                android:textStyle="bold|italic" />
 
             <Button
                 android:id="@+id/btn_cos"
+                style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/btn_cos" />
+                android:text="@string/btn_cos"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textSize="14sp"
+                android:textStyle="bold|italic" />
 
             <Button
                 android:id="@+id/btn_log"
+                style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/btn_log" />
+                android:text="@string/btn_log"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textSize="14sp"
+                android:textStyle="bold|italic" />
 
             <Button
                 android:id="@+id/btn_pow"
+                style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/btn_pow" />
+                android:text="@string/btn_pow"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textSize="14sp"
+                android:textStyle="bold|italic" />
         </LinearLayout>
 
         <LinearLayout
@@ -254,31 +330,47 @@
 
             <Button
                 android:id="@+id/btn_tan"
+                style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/btn_tan" />
+                android:text="@string/btn_tan"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textSize="14sp"
+                android:textStyle="bold|italic" />
 
             <Button
                 android:id="@+id/btn_cot"
+                style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/btn_cot" />
+                android:text="@string/btn_cot"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textSize="14sp"
+                android:textStyle="bold|italic" />
 
             <Button
                 android:id="@+id/btn_sqrt"
+                style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/btn_sqrt" />
+                android:text="@string/btn_sqrt"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textSize="14sp"
+                android:textStyle="bold|italic" />
 
             <Button
                 android:id="@+id/btn_percent"
+                style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/btn_percent" />
+                android:text="@string/btn_percent"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textSize="14sp"
+                android:textStyle="bold|italic" />
         </LinearLayout>
     </LinearLayout>
 

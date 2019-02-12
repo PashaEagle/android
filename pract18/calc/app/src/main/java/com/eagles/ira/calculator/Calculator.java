@@ -1,8 +1,8 @@
-package com.kolesn.pasha.calculator;
+package com.eagles.ira.calculator;
 
 import android.content.Context;
-import android.widget.Toast;
 
+//сам калькулятор
 public class Calculator {
     private Context context;
 

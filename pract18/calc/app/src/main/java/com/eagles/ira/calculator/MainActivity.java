@@ -1,4 +1,4 @@
-package com.kolesn.pasha.calculator;
+package com.eagles.ira.calculator;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
 
     private LinearLayout engineer_layout;
 
-
+    //Метод визивається при запуску форми
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -97,6 +97,7 @@ public class MainActivity extends AppCompatActivity {
 
         engineer_layout.setVisibility(View.INVISIBLE);
 
+        //Провіряєм яка кнопка була нажата
         View.OnClickListener onClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -239,6 +240,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    //Для роботи меню
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -246,6 +248,7 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+    //Метод при нажатіі на меню провіряє який пункт був вибраний(справа вверху)
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle item selection
@@ -261,6 +264,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    //При нажатіі на кнопку з цифрою
     public void digitButtonHandler(String text){
         if (txt_result.getText().toString().equals("0")) txt_result.setText("");
         if (currentOperation.equals(CalculatorOperation.NULL)){
@@ -283,41 +287,100 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void operationButtonHandler(CalculatorOperation calculatorOperation){
+    //При нажатіі на кнопку з операцією (+ - / * ^)
+    public void operationButtonHandler(CalculatorOperation calculatorOperation) {
         if (firstArgLastDot || secondArgLastDot) {
             Toast.makeText(MainActivity.this, "Type digit after point firstly", Toast.LENGTH_SHORT).show();
             return;
         }
 
         if (firstArg == null) return;
-        secondArg = null;
-        secondArgHasDot = false;
-        secondArgLastDot = false;
-        if (!currentOperation.equals(CalculatorOperation.NULL)){
-            txt_result.setText(firstArg.toString());
+        if (firstArg != null && secondArg == null){
+            secondArg = null;
+            secondArgHasDot = false;
+            secondArgLastDot = false;
+            if (!currentOperation.equals(CalculatorOperation.NULL)){
+                txt_result.setText(firstArg.toString());
+            }
+            currentOperation = calculatorOperation;
+            String textToAdd = "null";
+            switch(calculatorOperation){
+                case ADD:
+                    textToAdd = getResources().getString(R.string.btn_plus);
+                    break;
+                case SUBSTRACT:
+                    textToAdd = getResources().getString(R.string.btn_substract);
+                    break;
+                case MULTIPLY:
+                    textToAdd = getResources().getString(R.string.btn_multiply);
+                    break;
+                case DIVIDE:
+                    textToAdd = getResources().getString(R.string.btn_divide);
+                    break;
+                case POW:
+                    textToAdd = getResources().getString(R.string.btn_pow);
+                    break;
+            }
+            txt_result.append(textToAdd);
         }
-        currentOperation = calculatorOperation;
-        String textToAdd = "null";
-        switch(calculatorOperation){
-            case ADD:
-                textToAdd = getResources().getString(R.string.btn_plus);
-                break;
-            case SUBSTRACT:
-                textToAdd = getResources().getString(R.string.btn_substract);
-                break;
-            case MULTIPLY:
-                textToAdd = getResources().getString(R.string.btn_multiply);
-                break;
-            case DIVIDE:
-                textToAdd = getResources().getString(R.string.btn_divide);
-                break;
-            case POW:
-                textToAdd = getResources().getString(R.string.btn_pow);
-                break;
+        else if (secondArg != null){
+            if (currentOperation.equals(CalculatorOperation.DIVIDE) && secondArg == 0){
+                Toast.makeText(MainActivity.this, "Dividing by zero", Toast.LENGTH_SHORT).show();
+                return;
+            }
+            Double res;
+            try{
+                 res = Calculator.Equal(firstArg, secondArg, currentOperation);
+            } catch(Exception ex){
+                return;
+            }
+
+            String[] splitter = String.valueOf(res).split("\\.");
+            if (splitter[1].length() > 8){
+                txt_result.setText(String.format("%.8f", res).replace(',','.'));
+            }
+            else if (splitter[1].equals("0")){
+                double res_d = res.doubleValue();
+                int res_i = (int)res_d;
+                Integer res_I = Integer.valueOf(res_i);
+                txt_result.setText(res_I.toString());
+            }
+            else{
+                txt_result.setText(res.toString());
+            }
+
+            firstArg = Double.parseDouble(txt_result.getText().toString());
+            secondArg = null;
+            currentOperation = CalculatorOperation.NULL;
+
+
+
+            currentOperation = calculatorOperation;
+            String textToAdd = "null";
+            switch(calculatorOperation){
+                case ADD:
+                    textToAdd = getResources().getString(R.string.btn_plus);
+                    break;
+                case SUBSTRACT:
+                    textToAdd = getResources().getString(R.string.btn_substract);
+                    break;
+                case MULTIPLY:
+                    textToAdd = getResources().getString(R.string.btn_multiply);
+                    break;
+                case DIVIDE:
+                    textToAdd = getResources().getString(R.string.btn_divide);
+                    break;
+                case POW:
+                    textToAdd = getResources().getString(R.string.btn_pow);
+                    break;
+            }
+            txt_result.append(textToAdd);
+
         }
-        txt_result.append(textToAdd);
+
     }
 
+    //При нажатіі на кнопку дорівнює
     public void equalButtonHandler() throws DividingByNullException {
         if (firstArg == null || secondArg == null || currentOperation.equals(CalculatorOperation.NULL) || firstArgLastDot || secondArgLastDot)
             return;
@@ -345,6 +408,7 @@ public class MainActivity extends AppCompatActivity {
         currentOperation = CalculatorOperation.NULL;
     }
 
+    //При нажатіі на кнопку clear
     public void clearButtonHandler(){
         txt_result.setText("0");
         firstArg = null;
@@ -357,6 +421,7 @@ public class MainActivity extends AppCompatActivity {
         secondArgHasDot = false;
     }
 
+    //При нажатіі на кнопку з точкою
     public void dotButtonHandler(){
         if (currentOperation.equals(CalculatorOperation.NULL)){
             if (firstArg == null) return;
@@ -374,6 +439,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    //При нажатіі на кнопку з складною операцією (sin, cos..)
     public void funcButtonHandler(CalculatorOperation calculatorOperation){
         if (firstArg != null && !firstArgLastDot && secondArg == null && currentOperation.equals(CalculatorOperation.NULL)){
             Double res = 0.0;
