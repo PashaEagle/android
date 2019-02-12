@@ -34,7 +34,7 @@
             android:id="@+id/textAddress"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Address: " />
+            android:text="Author:" />
 
         <EditText
             android:id="@+id/tAddress"
@@ -48,7 +48,7 @@
             android:id="@+id/textPrice"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Price: " />
+            android:text="Pages:" />
 
         <EditText
             android:id="@+id/tPrice"
@@ -61,7 +61,7 @@
             android:id="@+id/textAmount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Amount: " />
+            android:text="Year:" />
 
         <EditText
             android:id="@+id/tAmount"
@@ -74,7 +74,7 @@
             android:id="@+id/textDate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Date: " />
+            android:text="State:" />
 
         <EditText
             android:id="@+id/tDate"
@@ -82,7 +82,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="17.01.19" />
+            android:text="inStock" />
 
         <Button
             android:id="@+id/button"

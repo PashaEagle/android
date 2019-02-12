@@ -15,7 +15,7 @@
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Enter name or sub name to search for" />
+            android:text="Enter name of author or sub name to search for" />
 
         <EditText
             android:id="@+id/search_text"

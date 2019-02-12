@@ -11,10 +11,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="TextView"
-        android:textColor="@color/design_default_color_primary_dark"
-        android:textSize="24sp"
+        android:textColor="@color/colorAccent"
+        android:textSize="18sp"
         android:textStyle="bold"
-        app:fontFamily="casual" />
+        app:fontFamily="@font/carter_one" />
 
     <LinearLayout
         android:layout_width="409dp"
@@ -31,13 +31,19 @@
                 android:layout_width="81dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Price: " />
+                android:text="Pages: "
+                android:textColor="@color/design_default_color_primary_dark"
+                android:textSize="12sp"
+                app:fontFamily="@font/carter_one" />
 
             <TextView
                 android:id="@+id/tPrice"
                 android:layout_width="148dp"
                 android:layout_height="wrap_content"
-                android:text="TextView" />
+                android:text="TextView"
+                android:textColor="@color/design_default_color_primary_dark"
+                android:textSize="12sp"
+                app:fontFamily="@font/carter_one" />
 
         </LinearLayout>
 
@@ -51,13 +57,19 @@
                 android:layout_width="81dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Address: " />
+                android:text="Author"
+                android:textColor="@color/design_default_color_primary_dark"
+                android:textSize="12sp"
+                app:fontFamily="@font/carter_one" />
 
             <TextView
                 android:id="@+id/tAddress"
                 android:layout_width="148dp"
                 android:layout_height="wrap_content"
-                android:text="TextView" />
+                android:text="TextView"
+                android:textColor="@color/design_default_color_primary_dark"
+                android:textSize="12sp"
+                app:fontFamily="@font/carter_one" />
 
         </LinearLayout>
 
@@ -71,13 +83,19 @@
                 android:layout_width="82dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Amount: " />
+                android:text="Year:"
+                android:textColor="@color/design_default_color_primary_dark"
+                android:textSize="12sp"
+                app:fontFamily="@font/carter_one" />
 
             <TextView
                 android:id="@+id/tAmount"
                 android:layout_width="147dp"
                 android:layout_height="wrap_content"
-                android:text="TextView" />
+                android:text="TextView"
+                android:textColor="@color/design_default_color_primary_dark"
+                android:textSize="12sp"
+                app:fontFamily="@font/carter_one" />
         </LinearLayout>
 
         <LinearLayout
@@ -90,13 +108,19 @@
                 android:layout_width="81dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Date:" />
+                android:text="State:"
+                android:textColor="@color/design_default_color_primary_dark"
+                android:textSize="12sp"
+                app:fontFamily="@font/carter_one" />
 
             <TextView
                 android:id="@+id/tDate"
                 android:layout_width="148dp"
                 android:layout_height="wrap_content"
-                android:text="TextView" />
+                android:text="TextView"
+                android:textColor="@color/design_default_color_primary_dark"
+                android:textSize="12sp"
+                app:fontFamily="@font/carter_one" />
         </LinearLayout>
 
     </LinearLayout>
