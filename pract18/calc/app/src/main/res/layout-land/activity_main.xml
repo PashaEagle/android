@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/background_dark"
+    tools:background="@android:color/background_dark"
     tools:context=".MainActivity"
     tools:layout_editor_absoluteY="73dp">
 
@@ -236,7 +238,7 @@
 
         <LinearLayout
             android:id="@+id/linearLayout2"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:visibility="visible"
@@ -301,6 +303,32 @@
                 android:orientation="horizontal">
 
                 <Button
+                    android:id="@+id/btn_log"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/btn_log"
+                    android:textAppearance="@style/TextAppearance.AppCompat"
+                    android:textStyle="bold|italic" />
+
+                <Button
+                    android:id="@+id/btn_pow"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/btn_pow"
+                    android:textAppearance="@style/TextAppearance.AppCompat"
+                    android:textStyle="bold|italic" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
                     android:id="@+id/btn_cot"
                     style="@style/Widget.AppCompat.Button.Colored"
                     android:layout_width="wrap_content"
@@ -320,32 +348,6 @@
                     android:textAppearance="@style/TextAppearance.AppCompat"
                     android:textStyle="bold|italic" />
 
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/btn_log"
-                    style="@style/Widget.AppCompat.Button.Colored"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/btn_log"
-                    android:textAppearance="@style/TextAppearance.AppCompat"
-                    android:textStyle="bold|italic" />
-
-                <Button
-                    android:id="@+id/btn_pow"
-                    style="@style/Widget.AppCompat.Button.Colored"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/btn_pow"
-                    android:textAppearance="@style/TextAppearance.AppCompat"
-                    android:textStyle="bold|italic" />
             </LinearLayout>
 
         </LinearLayout>

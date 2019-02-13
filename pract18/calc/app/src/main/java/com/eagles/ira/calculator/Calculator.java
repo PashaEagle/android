@@ -69,15 +69,9 @@ public class Calculator {
         return (1.0 / Math.tan(x));
     }
 
-    public static Double Log(Double x){
-        return Math.log(x);
-    }
+    public static Double Log(Double x) {return Math.log(x); }
 
-    public static Double Sqrt(Double x){
-        return Math.sqrt(x);
-    }
+    public static Double Sqrt(Double x) {return Math.sqrt(x); }
 
-    public static Double Percent(Double x){
-        return x / 100.0;
-    }
+    public static Double Percent(Double x){ return x / 100.0; }
 }

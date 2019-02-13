@@ -2,6 +2,8 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@+id/engineerMode"
         android:title="Engineer mode"/>
+
     <item android:id="@+id/simpleMode"
         android:title="Simple mode"/>
+    android:background="@android:color/background_dark"
 </menu>

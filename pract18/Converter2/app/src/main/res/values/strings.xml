@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Converter2</string>
+    <string name="tv1">Input value</string>
+    <string name="tv2">Result</string>
+    <string name="btn">Convert</string>
+    <string name="rb1">United States Dollar</string>
+    <string name="rb2">Evro </string>
+    <string name="rb3">Russian Ruble</string>
+    <string name="rb4">Polish Zloty</string>
+</resources>

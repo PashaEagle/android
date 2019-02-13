@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/background_dark"
+    tools:background="@android:color/background_dark"
     tools:context=".MainActivity"
     tools:layout_editor_absoluteY="81dp">
 
@@ -23,12 +25,14 @@
         android:textAllCaps="false"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
         android:textStyle="bold"
-        app:fontFamily="casual"
+        app:fontFamily="sans-serif"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:background="@android:color/background_dark"
+        tools:fontFamily="sans-serif" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -85,7 +89,7 @@
                 android:id="@+id/btn_plus"
                 style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="@string/btn_plus"
                 android:textAppearance="@style/TextAppearance.AppCompat"
@@ -242,7 +246,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            tools:background="@android:color/background_dark">
 
             <Button
                 android:id="@+id/btn_clear"
@@ -275,8 +280,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content">
 
             <Button
                 android:id="@+id/btn_sin"
@@ -325,8 +329,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:layout_height="match_parent">
 
             <Button
                 android:id="@+id/btn_tan"
@@ -334,6 +337,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:baselineAligned="false"
                 android:text="@string/btn_tan"
                 android:textAppearance="@style/TextAppearance.AppCompat"
                 android:textSize="14sp"

@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
 
     private LinearLayout engineer_layout;
 
-    //Метод визивається при запуску форми
+    //When the form is ruuning
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -97,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
 
         engineer_layout.setVisibility(View.INVISIBLE);
 
-        //Провіряєм яка кнопка була нажата
+        //Check the button
         View.OnClickListener onClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -165,6 +165,9 @@ public class MainActivity extends AppCompatActivity {
                         } catch (DividingByNullException e) {
                             Toast.makeText(MainActivity.this, "111You can not divide by 0", Toast.LENGTH_LONG).show();
                         }
+                         //catch(SqrtFromNegativeException e){
+                             //Toast.makeText(MainActivity.this, "111You can not work with negatives", Toast.LENGTH_LONG).show();
+                         //}
                         break;
 
                     case R.id.btn_clear:
@@ -240,7 +243,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    //Для роботи меню
+    //Menu
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -248,7 +251,7 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
-    //Метод при нажатіі на меню провіряє який пункт був вибраний(справа вверху)
+    //Checking mode
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle item selection
@@ -264,7 +267,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    //При нажатіі на кнопку з цифрою
+    //Digit Button
     public void digitButtonHandler(String text){
         if (txt_result.getText().toString().equals("0")) txt_result.setText("");
         if (currentOperation.equals(CalculatorOperation.NULL)){
@@ -287,7 +290,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    //При нажатіі на кнопку з операцією (+ - / * ^)
+    //Button operations (+ - / * ^)
     public void operationButtonHandler(CalculatorOperation calculatorOperation) {
         if (firstArgLastDot || secondArgLastDot) {
             Toast.makeText(MainActivity.this, "Type digit after point firstly", Toast.LENGTH_SHORT).show();
@@ -380,7 +383,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    //При нажатіі на кнопку дорівнює
+    //Button equal
     public void equalButtonHandler() throws DividingByNullException {
         if (firstArg == null || secondArg == null || currentOperation.equals(CalculatorOperation.NULL) || firstArgLastDot || secondArgLastDot)
             return;
@@ -408,7 +411,7 @@ public class MainActivity extends AppCompatActivity {
         currentOperation = CalculatorOperation.NULL;
     }
 
-    //При нажатіі на кнопку clear
+    //clear
     public void clearButtonHandler(){
         txt_result.setText("0");
         firstArg = null;
@@ -421,7 +424,7 @@ public class MainActivity extends AppCompatActivity {
         secondArgHasDot = false;
     }
 
-    //При нажатіі на кнопку з точкою
+    //Dot
     public void dotButtonHandler(){
         if (currentOperation.equals(CalculatorOperation.NULL)){
             if (firstArg == null) return;
@@ -439,8 +442,8 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    //При нажатіі на кнопку з складною операцією (sin, cos..)
-    public void funcButtonHandler(CalculatorOperation calculatorOperation){
+    // (sin, cos..)
+    public void funcButtonHandler(CalculatorOperation calculatorOperation) {
         if (firstArg != null && !firstArgLastDot && secondArg == null && currentOperation.equals(CalculatorOperation.NULL)){
             Double res = 0.0;
             switch(calculatorOperation){
@@ -465,7 +468,7 @@ public class MainActivity extends AppCompatActivity {
                     break;
 
                 case LOG:
-                    if (Double.parseDouble(txt_result.getText().toString()) < 0){
+                    if (Double.parseDouble(txt_result.getText().toString()) <= 0){
                         Toast.makeText(MainActivity.this, "Cannot find logariphm of negative number", Toast.LENGTH_SHORT).show();
                         break;
                     }
@@ -473,6 +476,10 @@ public class MainActivity extends AppCompatActivity {
                     break;
 
                 case SQRT:
+                    if (Double.parseDouble(txt_result.getText().toString()) < 0){
+                        Toast.makeText(MainActivity.this, "Cannot find sqrt of negative number", Toast.LENGTH_SHORT).show();
+                        break;
+                    }
                     res = Calculator.Sqrt(Double.parseDouble(txt_result.getText().toString()));
                     break;
 
