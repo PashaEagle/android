@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Factory</string>
+    <string name="item_search">Search</string>
+    <string name="item_show_only_parked">Show only absent</string>
+    <string name="item_show_only_out">Show only present</string>
+    <string name="item_show_all">Show all</string>
+</resources>

@@ -25,4 +25,5 @@
     <string name="btn_sqrt">Sqrt</string>
     <string name="btn_pow">^</string>
     <string name="btn_percent">%</string>
+    <string name="btn_backspace">Delete</string>
 </resources>

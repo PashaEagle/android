@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
     private Button btn_pow;
     private Button btn_sqrt;
     private Button btn_percent;
+    private Button btn_backspace;
 
     private LinearLayout engineer_layout;
 
@@ -90,10 +91,10 @@ public class MainActivity extends AppCompatActivity {
         btn_log = (Button)findViewById(R.id.btn_log);
         btn_pow = (Button)findViewById(R.id.btn_pow);
         btn_sqrt = (Button)findViewById(R.id.btn_sqrt);
+        btn_backspace = (Button)findViewById(R.id.btn_backspace);
+        txt_result = (TextView)findViewById(R.id.txt_result);
         btn_percent = (Button)findViewById(R.id.btn_percent);
         engineer_layout = (LinearLayout)findViewById(R.id.linearLayout2);
-
-        txt_result = (TextView)findViewById(R.id.txt_result);
 
         engineer_layout.setVisibility(View.INVISIBLE);
 
@@ -209,6 +210,10 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.btn_percent:
                         funcButtonHandler(CalculatorOperation.PERCENT);
                         break;
+
+                    case R.id.btn_backspace:
+                        backspaceButtonHandler();
+                        break;
                 }
             }
         };
@@ -239,6 +244,7 @@ public class MainActivity extends AppCompatActivity {
         btn_pow.setOnClickListener(onClickListener);
         btn_sqrt.setOnClickListener(onClickListener);
         btn_percent.setOnClickListener(onClickListener);
+        btn_backspace.setOnClickListener(onClickListener);
 
     }
 
@@ -294,6 +300,10 @@ public class MainActivity extends AppCompatActivity {
     public void operationButtonHandler(CalculatorOperation calculatorOperation) {
         if (firstArgLastDot || secondArgLastDot) {
             Toast.makeText(MainActivity.this, "Type digit after point firstly", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (currentOperation.equals(CalculatorOperation.POW) && firstArg < 0 && secondArgHasDot){
+            Toast.makeText(MainActivity.this, "Cannot find root of negative", Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -391,6 +401,10 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(MainActivity.this, "Dividing by zero", Toast.LENGTH_SHORT).show();
             return;
         }
+        if (currentOperation.equals(CalculatorOperation.POW) && firstArg < 0 && secondArgHasDot){
+            Toast.makeText(MainActivity.this, "Cannot find root of negative", Toast.LENGTH_SHORT).show();
+            return;
+        }
         Double res = Calculator.Equal(firstArg, secondArg, currentOperation);
         String[] splitter = String.valueOf(res).split("\\.");
         if (splitter[1].length() > 8){
@@ -409,6 +423,75 @@ public class MainActivity extends AppCompatActivity {
         firstArg = Double.parseDouble(txt_result.getText().toString());
         secondArg = null;
         currentOperation = CalculatorOperation.NULL;
+    }
+
+    //Delete button
+    public void backspaceButtonHandler(){
+        if (txt_result.getText().toString().equals("0") || firstArg == null) return;
+        if (txt_result.getText().toString().length() == 1){
+            txt_result.setText("0");
+            firstArg = null; secondArg = null; firstArgHasDot = false; secondArgHasDot = false;
+            currentOperation = CalculatorOperation.NULL;
+            return;
+        }
+        int len = txt_result.getText().toString().length();
+        char lastChar = txt_result.getText().toString().charAt(len-1);
+        if (lastChar == '+' || lastChar == '-' || lastChar == '/' || lastChar == '*' || lastChar == '^'){
+            currentOperation = CalculatorOperation.NULL;
+            secondArg = null;
+        } else if (lastChar == '.'){
+            if (firstArgLastDot) {
+                firstArgLastDot = false;
+                firstArgHasDot = false;
+            }
+            else if (secondArgLastDot){
+                secondArgHasDot = false;
+                secondArgLastDot = false;
+                String stash = secretSecondArg;
+                secretSecondArg = "";
+                for (int i = 0; i < stash.length() - 1; ++i) secretSecondArg += stash.charAt(i);
+            }
+        }
+        else if (secondArg != null){
+            String stash = secretSecondArg;
+            secretSecondArg = "";
+
+            if (stash.length() == 1){
+                secondArg = null;
+            } else {
+                for (int i = 0; i < stash.length() - 1; ++i) secretSecondArg += stash.charAt(i);
+            }
+            if (secretSecondArg.length() > 1 && secretSecondArg.charAt(secretSecondArg.length() - 1) == '.'){
+                secondArgLastDot = true;
+                secondArgHasDot = true;
+            }
+        } else if (firstArg != null){
+            String stash = firstArg.toString();
+            if (stash.length() == 1) firstArg = null;
+            else {
+                String stashFirst = "";
+                for (int i = 0; i < stash.length() - 1; ++i) stashFirst += stash.charAt(i);
+                if (stashFirst.charAt(stashFirst.length() - 1) == '.'){
+                    firstArgLastDot = true;
+                    firstArgHasDot = true;
+                    String stashFirstWithoutDot = "";
+                    for (int i = 0; i < stashFirst.length() - 1; ++i) stashFirstWithoutDot += stash.charAt(i);
+                    firstArg = Double.parseDouble(stashFirstWithoutDot);
+                } else
+                    try {
+                        firstArg = Double.parseDouble(stashFirst);
+                    } catch(Exception e){
+                        Toast.makeText(MainActivity.this, "Error occured, please clear all", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                }
+
+        }
+
+        String newTxtResult = "";
+        for (int i = 0; i < len - 1; ++i) newTxtResult += txt_result.getText().toString().charAt(i);
+        txt_result.setText(newTxtResult);
+
     }
 
     //clear
