@@ -3,7 +3,7 @@ package com.eagles.ira.factory;
 import java.io.Serializable;
 
 public abstract class Worker implements Serializable { //Головний абстрактний клас, на основі нього ше два: AbsentWorker і PresentWorker
-    //Поля
+    //Fields
     protected String name;
     protected String position;
     protected Double number;
@@ -11,7 +11,7 @@ public abstract class Worker implements Serializable { //Головний абс
     protected Boolean isPresent;
     protected String date;
 
-    //Конструктори
+    //Constructors
     public Worker(){}
     public Worker(String name){this.name = name;}
     public Worker(String name, String position){this.name = name; this.position = position;}
@@ -20,7 +20,7 @@ public abstract class Worker implements Serializable { //Головний абс
     public Worker(String name, String position, Double number, Integer department, String date){this.name = name; this.position = position; this.number = number; this.department = department; this.date = date;}
     public Worker(String name, String position, Double number, Integer department, Boolean isPresent, String date){this.name = name; this.position = position; this.number = number; this.department = department; this.isPresent = isPresent; this.date = date;}
 
-    //Геттери, сеттери полів
+    //Accessors
     public String getName() {
         return name;
     }

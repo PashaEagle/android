@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public class AbsentWorker extends Worker implements Serializable {
 
-
+    //Constructors of absent worker
     public AbsentWorker(String name) {
         super(name);
     }

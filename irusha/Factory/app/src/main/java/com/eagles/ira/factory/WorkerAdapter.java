@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+//Adapters are needed to correctly show that scrolling lists
 public class WorkerAdapter extends BaseAdapter { //Адаптери потрібні для відображення спику всіх книжок, їх три, так як списка тоже три
 
     View viewGL;
@@ -26,6 +27,7 @@ public class WorkerAdapter extends BaseAdapter { //Адаптери потріб
         lInflater = (LayoutInflater) ctx
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
+        //Here and lower the logic for deleting
         notifyDataSetChanged();
         ad = new AlertDialog.Builder(ctx);
         ad.setTitle("Deleting");  // заголовок
@@ -66,6 +68,7 @@ public class WorkerAdapter extends BaseAdapter { //Адаптери потріб
         return position;
     }
 
+    //Here we set all the fields
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View view = convertView;
@@ -98,11 +101,11 @@ public class WorkerAdapter extends BaseAdapter { //Адаптери потріб
         return ((Worker) getItem(position));
     }
 
+    //Deleting method
     public void deleteAndRefresh(View v){
         String searchName = ((TextView) v.findViewById(R.id.tName)).getText().toString();
         for (int i = 0 ; i < MainActivity.list.size(); ++i){
             if (MainActivity.list.get(i).getName().equals(searchName)){
-                //objects.remove(i);
                 MainActivity.list.remove(i);
                 Toast.makeText(ctx, ""+i,
                         Toast.LENGTH_LONG).show();
@@ -112,7 +115,6 @@ public class WorkerAdapter extends BaseAdapter { //Адаптери потріб
         }
         for (int i = 0 ; i < MainActivity.AbsentList.size(); ++i){
             if (MainActivity.AbsentList.get(i).getName().equals(searchName)){
-                //objects.remove(i);
                 MainActivity.AbsentList.remove(i);
                 Toast.makeText(ctx, ""+i,
                         Toast.LENGTH_LONG).show();
@@ -122,7 +124,6 @@ public class WorkerAdapter extends BaseAdapter { //Адаптери потріб
         }
         for (int i = 0 ; i < MainActivity.PresentList.size(); ++i){
             if (MainActivity.PresentList.get(i).getName().equals(searchName)){
-                //objects.remove(i);
                 MainActivity.PresentList.remove(i);
                 Toast.makeText(ctx, ""+i,
                         Toast.LENGTH_LONG).show();

@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
         // отримуємо ід вибраного пункту меню
         int id = item.getItemId();
 
-        // В залежності від вибраного пункту виконуємо певну реалізацію
+        // В залежності від вибраного пункту..
         switch (id) {
             case R.id.item_search:
                 Toast.makeText(MainActivity.this, "Going for search by name !", Toast.LENGTH_SHORT).show();
@@ -103,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
 
         lvMain = (ListView) findViewById(R.id.list);//знаходимо ліст
-        lvMain.setAdapter(workerAdapter);//заносимо дані із колекції
+        lvMain.setAdapter(workerAdapter);//заносимо дані
 
     }
 

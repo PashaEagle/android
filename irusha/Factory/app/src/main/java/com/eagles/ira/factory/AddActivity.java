@@ -34,7 +34,7 @@ public class AddActivity extends AppCompatActivity {
                             Integer.parseInt(eDepartment.getText().toString()), true,
                             eDate.getText().toString()
                     );
-                    MainActivity.list.add(worker);//додаємо в статичну колекцію
+                    MainActivity.list.add(worker);//додаємо в список
                     MainActivity.PresentList.add((PresentWorker) worker);
                     finish();//закриваємо активність
                 } catch(Exception e){

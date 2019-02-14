@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+//Adapters are needed to correctly show that scrolling lists
 public class AbsentWorkerAdapter extends BaseAdapter {
 
     Context ctx;
@@ -38,6 +39,7 @@ public class AbsentWorkerAdapter extends BaseAdapter {
         return position;
     }
 
+    //Only this method is interesting for you. Here we set the data for all items
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View view = convertView;
@@ -50,7 +52,7 @@ public class AbsentWorkerAdapter extends BaseAdapter {
         ((TextView) view.findViewById(R.id.tName)).setText(p.name);
         ((TextView) view.findViewById(R.id.tNumber)).setText(p.number.toString());
         ((TextView) view.findViewById(R.id.tPosition)).setText(p.position);
-        ((TextView) view.findViewById(R.id.tDepartment)).setText("BX " + p.department.toString());
+        ((TextView) view.findViewById(R.id.tDepartment)).setText("#" + p.department.toString());
         ((TextView) view.findViewById(R.id.tDate)).setText(p.date);
 
         view.setOnClickListener(new View.OnClickListener() {

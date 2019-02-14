@@ -38,21 +38,22 @@ public class SearchActivity extends AppCompatActivity {
 
     }
 
+    //Method which invocates when button 'search' pressed
     public void onSearchButton(View view){
         Searchlist.clear();
         String par = search_text.getText().toString();
         Searchlist = new ArrayList<>();
 
-        //Тут сама логіка пошуку, я провіряю чи шукомий текст збігається з частиною якогось номеру
+        //If part of the name is equals to the written name for search
         for (int i = 0; i < MainActivity.list.size(); ++i){
             if (MainActivity.list.get(i).getName().equals(par) || MainActivity.list.get(i).getName().contains(par)){
                 Searchlist.add(MainActivity.list.get(i));
             }
         }
-        if (Searchlist.size() > 0){ //Якщо шось знайшов
+        if (Searchlist.size() > 0){ //If found anything
             Toast.makeText(SearchActivity.this, "Found " + Searchlist.size() + " workers", Toast.LENGTH_SHORT).show();
         }
-        else{ // Якшо ніче не найшов
+        else{ // If not found
             Toast.makeText(SearchActivity.this, "Nothing found..", Toast.LENGTH_SHORT).show();
         }
 
